@@ -4,6 +4,8 @@ Blazor in .NET 5 upgrades from MSAL (Microsoft Authentication Library) v1 to v2.
 
 Note: While this repository contains code sample, keys/ids/etc and source files containing them have been removed. As a result, the samples here aren't immediately runnable.
 
+MSAL.js v2 supports the Authorization Code Flow with PKCE model for SPA-based clients. This is different from the authentication models that were supported with MSALv1. 
+
 ### Azure AD Authneitcaiton
 
 1. Sign in to the Azure portal.
@@ -28,7 +30,9 @@ Note: While this repository contains code sample, keys/ids/etc and source files 
 
 Now, that we've completed the necessary configurations in the Azure Portal, let's create our Blazor WASM app. Create the application using the following syntax.
 
-dotnet new blazorwasm -au SingleOrg --api-client-id "{SERVER API APP CLIENT ID}" --app-id-uri "{SERVER API APP ID URI}" --client-id "{CLIENT APP CLIENT ID}" --default-scope "{DEFAULT SCOPE}" --domain "{TENANT DOMAIN}" --tenant-id "{TENANT ID}" -ho -o {APP NAME}
+```
+$ dotnet new blazorwasm -au SingleOrg --api-client-id "{SERVER API APP CLIENT ID}" --app-id-uri "{SERVER API APP ID URI}" --client-id "{CLIENT APP CLIENT ID}" --default-scope "{DEFAULT SCOPE}" --domain "{TENANT DOMAIN}" --tenant-id "{TENANT ID}" -ho -o {APP NAME}
+```
 
 ### Azure B2C Authentication
 
@@ -51,6 +55,12 @@ dotnet new blazorwasm -au SingleOrg --api-client-id "{SERVER API APP CLIENT ID}"
 
 ### Create a user flow
 
-#### Create a Blazor app
+11. Navigate back to the B2C management portal and select "User flows" in the left-hand column.
+11. Select "New user flow" then select "Sign up and sign in" and select "Recommended" for version.
+11. Provide a name for the sign up flow and select the identity provider to use.
 
-dotnet new blazorwasm -au IndividualB2C --aad-b2c-instance "{AAD B2C INSTANCE}" --api-client-id "{SERVER API APP CLIENT ID}" --app-id-uri "{SERVER API APP ID URI}" --client-id "{CLIENT APP CLIENT ID}" --default-scope "{DEFAULT SCOPE}" --domain "{TENANT DOMAIN}" -ssp "{SIGN UP OR SIGN IN POLICY}" -ho -o {APP NAME}
+Now, that we've completed the necessary configurations in the Azure Portal, let's create our Blazor WASM app. Create the application using the following syntax.
+
+```
+$ dotnet new blazorwasm -au IndividualB2C --aad-b2c-instance "{AAD B2C INSTANCE}" --api-client-id "{SERVER API APP CLIENT ID}" --app-id-uri "{SERVER API APP ID URI}" --client-id "{CLIENT APP CLIENT ID}" --default-scope "{DEFAULT SCOPE}" --domain "{TENANT DOMAIN}" -ssp "B2C_1_{SIGN UP OR SIGN IN POLICY}" -ho -o {APP NAME}
+```
