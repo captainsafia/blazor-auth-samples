@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>AzureAdExample.Server-D3B85CF3-E07F-4A44-93F5-46FC0C68985C</UserSecretsId>
+    <WebProject_DirectoryAccessLevelKey>0</WebProject_DirectoryAccessLevelKey>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="5.0.0-rc.2.20466.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Client\AzureAdExample.Client.csproj" />
+    <ProjectReference Include="..\Shared\AzureAdExample.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Identity.Web" Version="0.4.0-preview" />
+    <PackageReference Include="Microsoft.Identity.Web.UI" Version="0.4.0-preview" />
+  </ItemGroup>
+
+</Project>

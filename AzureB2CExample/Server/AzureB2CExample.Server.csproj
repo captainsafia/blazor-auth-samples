@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>AzureB2CExample.Server-08170DA2-70FF-4D93-96F9-91E389A4ACC0</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="5.0.0-rc.2.20466.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Client\AzureB2CExample.Client.csproj" />
+    <ProjectReference Include="..\Shared\AzureB2CExample.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Identity.Web" Version="0.4.0-preview" />
+    <PackageReference Include="Microsoft.Identity.Web.UI" Version="0.4.0-preview" />
+  </ItemGroup>
+
+</Project>
